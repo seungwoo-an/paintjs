@@ -43,12 +43,17 @@ body{
 .controls .controls_colors{
     display:flex;
 }
+.controls_colors .colorClicked{
+    width:100px;
+    height:100px;
+}
 .controls_colors .controls_color{
     width: 50px;
     height: 50px;
     box-shadow: 0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.08);
     border-radius: 25px;
     cursor: pointer;
+    margin: 2px;
 }
 .controls .controls_range{
     margin-bottom: 20px;
