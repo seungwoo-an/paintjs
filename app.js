@@ -7,7 +7,7 @@ const save = document.getElementById("jsSave");
 const clear = document.getElementById("jsClear");
 
 const DEFAULT_COLOR = "#2c2c2c";
-const DEFAULT_LINE_WIDTH = 2.5;
+const DEFAULT_LINE_WIDTH = 10;
 const CANVAS_WIDTH = 700;
 const CANVAS_HEIGHT = 700;
 

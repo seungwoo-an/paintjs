@@ -43,7 +43,7 @@ body{
 .controls .controls_colors{
     display:flex;
 }
-.controls_colors .colorClicked{
+.controls_colors .controls_color .colorClicked{
     width:100px;
     height:100px;
 }
