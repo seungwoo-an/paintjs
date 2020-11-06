@@ -8,22 +8,22 @@ body{
     padding: 50px 0px;
 }
 .canvas{
-    width: 700px;
-    height: 700px;
+    width: 600px;
+    height: 600px;
     background-color: white;
     border-radius: 15px;
-    box-shadow: 0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.8);
 }
 .controls{
-    margin-top: 60px;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 .controls .controls_btns{
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
-.controls_btns button{
+.controls_btns button, .show_color{
     all:unset;
     cursor: pointer;
     background-color: white;
@@ -40,21 +40,34 @@ body{
 .controls_btns button:active{
     transform: scale(0.96);
 }
+.show_color{
+    width: 150px;
+}
+.show_color:active{
+    transform: scale(0.96);
+}
 .controls .controls_colors{
     display:flex;
+    margin-top: 10px;
 }
-.controls_colors .controls_color .colorClicked{
-    width:100px;
-    height:100px;
+.controls_colors .controls_color.colorClicked{
+    width:56px;
+    height:56px;
+    border-radius: 28px;
+    border: 1px solid rgba(0,0,0,0.8);
 }
 .controls_colors .controls_color{
     width: 50px;
     height: 50px;
-    box-shadow: 0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.08);
+    box-shadow: 0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.8);
     border-radius: 25px;
     cursor: pointer;
     margin: 2px;
 }
 .controls .controls_range{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
+.controls_colors.hidden, button.hidden{
+    display: none;
+}
+

@@ -1,24 +1,45 @@
 const canvas = document.querySelector("#jsCanvas");
 const context = canvas.getContext("2d");
 const colors = document.getElementsByClassName("jsColor");
+const colorList = document.getElementById("jsColors");
 const range = document.querySelector("#jsRange");
 const mode = document.getElementById("jsMode");
 const save = document.getElementById("jsSave");
 const clear = document.getElementById("jsClear");
+const showColor = document.getElementById("jsShowColor");
+const eraser = document.getElementById("jsEraser");
 
+const CLEARING_COLOR="white";
 const DEFAULT_COLOR = "#2c2c2c";
 const DEFAULT_LINE_WIDTH = 10;
-const CANVAS_WIDTH = 700;
-const CANVAS_HEIGHT = 700;
+const CANVAS_WIDTH = 600;
+const CANVAS_HEIGHT = 600;
 
 let painting = false;
 let filling = false;
+let showingColor = false;
 
+function handleEraserClick(){
+    context.strokeStyle=CLEARING_COLOR;
+    
+}
+function handleShowColor(){
+    let text;
+    if(!showingColor){
+        text="closecolors";
+        colorList.classList.remove("hidden");
+    }else{
+        text="showcolors";
+        colorList.classList.add("hidden");
+    }
+    showColor.innerText=text;
+    showingColor=!showingColor;
+}
 function handleClearClick(){
     clearCanvas();
 }
 function clearCanvas(){
-    context.fillStyle = "white";
+    context.fillStyle = CLEARING_COLOR;
     context.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
 }
 function setInitialCanvas() {
@@ -45,7 +66,14 @@ function handleCanvasClick() {
 }
 
 function handleModeClick() {
-    const text = (filling) ? "fill" : "paint";
+    let text = (filling) ? "fill" : "paint";
+    if(filling){
+        text = "fill";
+        eraser.classList.remove("hidden");
+    }else{
+        text="paint";
+        eraser.classList.add("hidden");
+    }
     mode.innerText = text;
     filling = !filling;
 }
@@ -103,6 +131,12 @@ function init() {
     }
     if(clear){
         clear.addEventListener("click", handleClearClick);
+    }
+    if(showColor){
+        showColor.addEventListener("click",handleShowColor);
+    }
+    if(eraser){
+        eraser.addEventListener("click",handleEraserClick)
     }
 }
 
