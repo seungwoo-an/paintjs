@@ -8,7 +8,7 @@ const save = document.getElementById("jsSave");
 const clear = document.getElementById("jsClear");
 const showColor = document.getElementById("jsShowColor");
 const eraser = document.getElementById("jsEraser");
-
+// 펜 종류 추가할 것
 const CLEARING_COLOR="white";
 const DEFAULT_COLOR = "#2c2c2c";
 const DEFAULT_LINE_WIDTH = 10;
