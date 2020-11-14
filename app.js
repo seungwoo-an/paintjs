@@ -47,6 +47,7 @@ function setInitialCanvas() {
     canvas.height = CANVAS_HEIGHT;
     clearCanvas();
     context.fillStyle = DEFAULT_COLOR;
+    context.lineCap="round";
     context.strokeStyle = DEFAULT_COLOR;
     context.lineWidth = DEFAULT_LINE_WIDTH;
 }
@@ -54,11 +55,12 @@ function handleCM(event) {
     event.preventDefault();
 }
 function handleSaveClick() {
+    const title = prompt("제목을 입력해주세요");
     const image = canvas.toDataURL("image/png");
     // const image = canvas.toDataURL();
     const link = document.createElement("a");
     link.href = image;
-    link.download = "PaintJS😁";
+    link.download = title;
     link.click();
 }
 function handleCanvasClick() {
